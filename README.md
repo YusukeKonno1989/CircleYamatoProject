@@ -5,9 +5,13 @@
 ※コロナの影響で活動が休止となったため、HPの内容は未完成
 
 ■使用しているフレームワーク等
+
 言語:Python,html
+
 フレームワーク：Django,Bootstrap4
+
 WEBサーバー：AWS(AmazonLinux)
+
 DB：AWS
 
 自力でAWS上にサーバーを構築し、PythonのインストールやDBの構築を行いました。
