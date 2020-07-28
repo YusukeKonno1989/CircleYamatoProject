@@ -1,0 +1,152 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+	<title>大和まほろ座</title>
+	<link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+
+	<script type="text/javascript">
+  		var startDateHtml = "2020/6/13 18:31";
+	</script>
+
+	<!-- 日時指定用JS読み込み  -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/static/js/view_timer.js"></script>
+	<script src="/static/js/refresh_timer.js"></script>
+
+</head>
+
+<body>
+<div id="pagebody">
+
+	<!-- ヘッダ -->
+	<div id="header-fixed">
+		<div id="header">
+			<div id="header_image">
+				<img src="/static/images/circle_emblem.png" width="100" alt="サークルエンブレム" align="left">
+			</div>
+			<h1 style="text-align:center"><a href="/">よさこいチーム<br>大和まほろ座</a></h1>
+		</div>
+
+		<!-- メインメニュー -->
+		<ul id="menu">
+			<li id="menu01"><a href="#anchor_overview" class="btn btn01">概要</a></li>
+			<li id="menu02"><a href="#anchor_schedule" class="btn btn02">練習予定</a></li>
+			<li id="menu03"><a href="#anchor_join" class="btn btn03">参加方法</a></li>
+			<li id="menu04"><a href="#anchor_faq" class="btn btn04">FAQ</a></li>
+			<li id="menu05"><a href="{% url 'Circle:contact_form' %}" class="btn btn05">お問い合わせ</a></li>
+			<li id="menu06"><a href="{% url 'Circle:login' %}" class="btn btn06">会員専用</a></li>
+		</ul>
+	</div>
+	<div id="body">
+		<!-- 概要 -->
+		<div id="overview">
+			<div id="anchor_overview">
+				<h2>私たちについて</h2>
+			</div>
+			<h2>　よさこいチームとは？</h2>
+
+			<p>あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお</p>
+			<p>あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお</p>
+			<p>あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお</p>
+			<br>
+			<h2>大和まほろ座とは？</h2>
+			<p>奈良・大阪で活動する社会人のよさこいチームです！</p>
+			<p>よさこいを通して一人でも多くの方々に奈良の魅力を知ってもらうため、日々練習しています！</p>
+			<p>参加や演武依頼など興味を持ちましたら、お問い合わせフォームよりご連絡ください！</p>
+		</div>
+
+		<!-- 練習予定 -->
+		<div id="schedule">
+			<div id="anchor_schedule">
+				<h2>スケジュール</h2>
+			</div>
+			<h2>・練習日</h2>
+			<h2>
+				<p>〇月×日(月)</p>
+				<p>〇月×日(火)</p>
+			</h2>
+				<br>
+			<h2>
+				・次回の披露
+				<p>5月31日(日)</p>
+				<p>帝塚山大学あかね祭</p>
+			</h2>
+		</div>
+
+		<!-- 参加方法 -->
+		<div id="join">
+			<div id="anchor_join">
+				<h2>参加方法</h2>
+			</div>
+			<h2>①練習日を確認し、お問い合わせ下さい</h2>
+			<h2><p>②担当よりご連絡します</p></h2>
+			<br>
+			<h2>③見学にお越しいただき、一緒に踊りましょう</h2>
+			<h2><p>④サークル加入を希望の場合は、ご連絡ください</p></h2>
+		</div>
+
+		<!-- FAQ -->
+		<div id="faq">
+			<div id="anchor_faq">
+				<h2>FAQ</h2>
+			</div>
+			<ul>
+				<li1>■社会人で始める人っていますか？</li1>
+				<p>　　→現在メンバーはほとんどが初心者の社会人です。</p>
+				<li1>■年齢制限はありますか？</li1>
+				<p>　　→特に年齢制限は設けていませんが、高校生以下に関しましては</p>
+				<p>　　保護者の同意や同伴(小中学生)等の対応を考えています。</p>
+				<li1>■練習は厳しいですか？</li1>
+				<p>　　→ほんわかやっています。ほぼ初心者なので未経験者大歓迎です！</p>
+				<li1>■大学生でも参加できますか？</li1>
+				<p>　　→サークル部活ではないので、奈良のいろんな大学生に来てほしいと思っています。</p>
+				<p>　　　大交流会！友達いっぱい！</p>
+			</ul>
+		</div>
+
+		<!-- お問い合わせ -->
+		<div id="inquiry">
+			<div id="anchor_inquiry">
+				<h2>お問い合わせ</h2>
+			</div>
+			<h2>Mail:</h2>
+			<h2>Twitter:</h2>
+			<h2>Instagram:</h2>
+			<h2>LINE:</h2>
+		</div>
+
+		<!-- 動画掲載 試作ゾーン -->
+		<span class="view_timer" data-start-date="2020/6/13 18:31">
+		<!-- 動画  -->
+		<div id="movie">
+			<div id="movie_area">
+				<video width="600px" height="300px" poster="/static/images/circle_picture.jpg" controls>
+					<source src="/static/movie/sample-video.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+		</span>
+	</div>
+
+	<!-- フッター -->
+	<footer>
+		<div id="footer">
+			<ul class="snsButtons">
+				<li class="snsButtons_twitter"><i class="fab fa-twitter"></i>
+					<span class="snsButtons_label">
+						<a href="https://twitter.com/yamato_mahoroza" target="_blank">twitter</a>
+					</span>
+				<li class="snsButtons_instagram"><i class="fab fa-instagram"></i><span class="snsButtons_label">instagram</span>
+				<li class="snsButtons_line"><i class="fab fa-line"></i><span class="snsButtons_label">Line</span>
+			</ul>
+			<center>
+				<p><small>&copy; copyright 2020</small></p>
+			</center>
+		</div>
+	</footer>
+
+</body>
+</html>

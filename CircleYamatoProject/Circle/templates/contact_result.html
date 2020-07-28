@@ -1,0 +1,59 @@
+{% extends "baseContact.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12" >
+      	<!-- ヘッダ -->
+		<div id="header-fixed">
+			<div id="header">
+				<div id="header_image">
+					<img src="/static/images/circle_emblem.png" width="100" alt="サークルエンブレム" align="left">
+				</div>
+				<h1 style="text-align:left"><a href="/" class="text-decoration-none">よさこいチーム<br>大和まほろ座</a></h1>
+			</div>
+
+			<!-- メインメニュー -->
+			<ul id="menu">
+				<li id="menu01"><a href="#anchor_overview" class="btn btn01">概要</a></li>
+				<li id="menu02"><a href="#anchor_schedule" class="btn btn02">練習予定</a></li>
+				<li id="menu03"><a href="#anchor_join" class="btn btn03">参加方法</a></li>
+				<li id="menu04"><a href="#anchor_faq" class="btn btn04">FAQ</a></li>
+				<li id="menu05"><a href="{% url 'Circle:contact_form' %}" class="btn btn05">お問い合わせ</a></li>
+				<li id="menu06"><a href="{% url 'Circle:login' %}" class="btn btn06">会員専用</a></li>
+			</ul>
+		</div>
+  	</div>
+  </div>
+
+  <div id="inquiry">
+	<div class="row">
+	  <div class="col-md-8">
+	    <div class="mx-auto">
+	      <h2>お問い合わせは送信されました。</h2>
+	    </div>
+
+	  </div>
+	</div>
+  </div>
+
+  <!-- フッター -->
+  <footer>
+	<div id="footer">
+		<ul class="snsButtons">
+			<li class="snsButtons_twitter"><i class="fab fa-twitter"></i>
+				<span class="snsButtons_label">
+					<a href="https://twitter.com/yamato_mahoroza" target="_blank">twitter</a>
+				</span>
+			<li class="snsButtons_instagram"><i class="fab fa-instagram"></i><span class="snsButtons_label">instagram</span>
+			<li class="snsButtons_line"><i class="fab fa-line"></i><span class="snsButtons_label">Line</span>
+		</ul>
+		<center>
+			<p><small>&copy; copyright 2020</small></p>
+		</center>
+	</div>
+  </footer>
+
+
+</div>
+{% endblock %}

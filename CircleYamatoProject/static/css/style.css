@@ -1,0 +1,375 @@
+/*============================================
+全般的なスタイル
+============================================*/
+* {
+	margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
+	line-height:1.5;		/*全要素の行の高さを1.5倍にする*/
+
+}
+body {
+	//background-color:#999999;	/* マージンの色 */
+	background-image:url("/static/images/bg_margin.png");
+	text-align:center;			/*IE6以下でセンタリングするための対策*/
+	color:#333333;				/*文字色*/
+}
+div#pagebody {
+	width:1205px; margin:0 auto;					/*内容全体をセンタリング*/
+	text-align:left;								/*テキストの配置を左揃えにする*/
+	background-repeat:repeat-y;						/*背景画像を縦方向に繰り返す*/
+}
+
+/*============================================
+ヘッダ
+============================================*/
+div#header-fixed {
+	position: fixed;	/* ヘッダ固定 */
+	top: 0px;
+	width: 1205px;
+	height:98px;
+}
+
+div#header {
+	height:140px;
+	width: 1205px;
+	background-image:url("/static/images/header.png");	/*ヘッダ部分の背景画像*/
+	background-repeat:no-repeat;		/*背景画像を繰り返さない*/
+	//background-color:#e0ffff;			/*ヘッダ部分の背景色*/
+}
+
+div#header_image {
+	padding:20px 0px 0px 470px;		/* 上右下左 位置調整 */
+}
+
+h1 {
+	padding:0px 460px 0px 0px;		/* 上右下左 位置調整 */
+	font-family:"HGP行書体", Helvetica, cursive;	/* フォントの種類 */
+	color: #fff !important;
+}
+h1 a {
+	text-decoration:none;	/*リンクの下線を無くす*/
+	color: #000 !important;
+}
+
+/*============================================
+ボディ
+============================================*/
+div#body {
+	padding:182px 0 0px 0;    /* 上に182pxを余白を取る */
+}
+/*============================================
+メインメニュー
+============================================*/
+ul#menu {
+	height:42px;
+	background-color:#eeeeee;
+	font-weight:bold;
+}
+li#menu01,li#menu02,li#menu03,li#menu04,li#menu05,li#menu06 {
+	float:left;			/*リスト項目を横に並べる*/
+	display:inline;			/*リスト項目をインライン表示にする*/
+	list-style-type:none;		/*リストマーカー無しにする*/
+	background-repeat:no-repeat; 	/*背景画像を繰り返さない*/
+}
+
+/*ボタン01～06にはそれぞれ異なる背景画像を指定する*/
+li#menu01 {
+	width:205px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	/* background-image:url("/static/images/bg_button1.png");*/	/*背景画像*/
+	background-size:200px 42px;
+}
+li#menu02 {
+	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-size:200px 42px;
+}
+li#menu03 {
+	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-size:200px 42px;
+}
+li#menu04 {
+	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-size:200px 42px;
+}
+li#menu05 {
+	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-size:200px 42px;
+}
+li#menu06 {
+	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	background-size:200px 42px;
+}
+ul#menu a {
+	display:block;				/*リンクをブロック表示にする*/
+	height:42px; padding-top:9px; text-align:center;
+	text-decoration:none; 			/*リンクの下線を無くす*/
+	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+}
+
+.btn01 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn02 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn03 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn04 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn05 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn06 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn01:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.btn02:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.btn03:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.btn04:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.btn05:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.btn06:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+/*============================================
+概要
+============================================*/
+div#overview {
+	width:1200px;	/*幅の指定と位置調整*/
+	height:300px;
+	float:left;				/*2カラム全体を左寄せにする*/
+	background-color:#fffaf0;
+	border-style: ridge;
+}
+p {
+	margin-left: 30px;
+}
+
+div#anchor_overview {
+	margin-top:-185px;
+ 	padding-top:185px;
+}
+
+/*============================================
+練習予定
+============================================*/
+div#schedule {
+	width:1200px;	/*幅の指定と位置調整*/
+	height:300px;
+	float:left;				/*2カラム全体を左寄せにする*/
+	background-color:#fffaf0;
+	border-style: ridge;
+}
+p {
+	margin-left: 30px;
+}
+
+div#anchor_schedule {
+	margin-top:-185px;
+ 	padding-top:185px;
+}
+
+/*============================================
+参加方法
+============================================*/
+div#join {
+	width:1200px;	/*幅の指定と位置調整*/
+	height:200px;
+	float:left;				/*2カラム全体を左寄せにする*/
+	background-color:#fffaf0;
+	border-style: ridge;
+}
+p {
+	margin-left: 30px;
+}
+
+div#anchor_join {
+	margin-top:-185px;
+ 	padding-top:185px;
+}
+
+/*============================================
+FAQ
+============================================*/
+div#faq {
+	width:1200px;	/*幅の指定と位置調整*/
+	height:300px;
+	float:left;				/*2カラム全体を左寄せにする*/
+	background-color:#fffaf0;
+	border-style: ridge;
+}
+li1 {
+	margin-left: 40px;
+}
+
+div#anchor_faq {
+	margin-top:-185px;
+ 	padding-top:185px;
+}
+
+/*============================================
+お問い合わせ
+============================================*/
+div#inquiry {
+	width:1200px;	/*幅の指定と位置調整*/
+	height:200px;
+	float:left;				/*2カラム全体を左寄せにする*/
+	background-color:#fffaf0;
+	border-style: ridge;
+}
+p {
+	margin-left: 30px;
+}
+
+div#anchor_inquiry {
+	margin-top:-185px;
+ 	padding-top:185px;
+}
+
+/*============================================
+動画
+============================================*/
+div#movie {
+	width:1200px;
+	height:600px;
+	float:left;				/* 中央寄せ */
+	background-color:#fffaf0;
+	border-style: ridge;
+}
+
+div#movie_area {
+	margin-top: 90px;
+	margin-left: 300px;
+
+}
+
+/*============================================
+フッター
+============================================*/
+div#footer {
+	width:1205px;
+	height:80px;
+	float:left;				/* 中央寄せ */
+	background-color:#000;
+	color:#fff;
+}
+
+/* SNS ボタンのグループ */
+.snsButtons {
+  margin: 5px;
+  padding: 0px;
+  text-align: center;
+}
+.snsButtons a {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+/* 各 SNS ボタンのボックス */
+.snsButtons li {
+  display: inline-block;  /* 水平に並べる */
+  list-style-type: none;  /* 先頭のポッチを消す */
+  margin: 2px;
+  padding: 6px 0px;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+/* マウスカーソルを重ねたとき */
+.snsButtons li:hover {
+  opacity: 0.7;
+}
+
+/* クリックしたとき */
+.snsButtons li:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+/* アイコン部分 */
+.snsButtons i {
+  font-size: 18pt;
+  min-width: 40px;
+  margin: 0px;
+  padding: 0px 0px 0px 8px;
+  vertical-align: bottom;
+}
+
+/* テキスト部分 */
+.snsButtons_label {
+  min-width: 80px;
+  display: inline-block;
+  padding: 0px 8px 0px 0px;
+  text-align: center;
+  font-size: 12pt;
+}
+
+/* 各 SNS のブランドカラー */
+.snsButtons_twitter  { background: #1da1f2; }
+.snsButtons_instagram { background: #cf2e92; }
+.snsButtons_line   { background: #00b900; }
+
