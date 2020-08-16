@@ -1,108 +1,83 @@
 /*============================================
 全般的なスタイル
 ============================================*/
-* {
-	margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
-	line-height:1.5;		/*全要素の行の高さを1.5倍にする*/
-
+html {
+  overflow-y: scroll;
 }
+
 body {
-	//background-color:#999999;	/* マージンの色 */
-	background-image:url("/static/images/bg_margin.png");
-	color:#333333;				/*文字色*/
+  background-color:#fffaf0;
 }
-div#pagebody {
-	width:1205px; margin:0 auto;					/*内容全体をセンタリング*/
-	text-align:left;								/*テキストの配置を左揃えにする*/
-	background-repeat:repeat-y;						/*背景画像を縦方向に繰り返す*/
-}
-
- .col-lg-12{
-	padding-bottom: 182px;
-	padding-right: 100px;
-}
-
 /*============================================
 ヘッダ
 ============================================*/
-div#header-fixed {
-	position: fixed;	/* ヘッダ固定 */
-	top: 0px;
-	width: 1205px;
-	height:98px;
+header.jumbotron {
+  background: url("/static/images/header.png");
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  max-height: 150px;
+  padding:20px 0px 20px 0px; /* 上右下左 */
+  margin-bottom: 0px;
+  border-radius: 0;          /* 角を四角化 */
 }
 
-div#header {
-	height:140px;
-	width: 1205px;
-	background-image:url("/static/images/header.png");	/*ヘッダ部分の背景画像*/
-	background-repeat:no-repeat;		/*背景画像を繰り返さない*/
-}
-
-div#header_image {
-	padding:20px 0px 0px 470px;		/* 上右下左 位置調整 */
-}
-
-h2 {
-	padding:0px 50px 0px 0px;		/* 上右下左 位置調整 */
+div#header_logo {
+  padding:0px 0px 0px 0px; /* 上右下左 */
 }
 
 h1 {
+	padding:0px 0px 0px 0px;		/* 上右下左 位置調整 */
 	font-family:"HGP行書体", Helvetica, cursive;	/* フォントの種類 */
 	color: #fff !important;
-	font-size: 33px;
 }
-
 h1 a {
+	text-decoration:none;	/*リンクの下線を無くす*/
 	color: #000 !important;
 }
 
-/*============================================
-ボディ
-============================================*/
-div#body {
-	padding:182px 0 0px 0;    /* 上に182pxを余白を取る */
+.menu{
+  background-color:#000000;
+  margin-top: 26px;
+  max-height: 42px;
 }
-/*============================================
-メインメニュー
-============================================*/
+
+ .col-6{
+  padding: 0px;
+}
+
+p {
+  margin:0px 0px 0px 0px;
+}
+
 ul#menu {
 	height:42px;
-	background-color:#000000;
 	font-weight:bold;
 }
 li#menu01,li#menu02,li#menu03,li#menu04,li#menu05,li#menu06 {
-	float:left;			/*リスト項目を横に並べる*/
-	display:inline;			/*リスト項目をインライン表示にする*/
-	list-style-type:none;		/*リストマーカー無しにする*/
-	background-repeat:no-repeat; 	/*背景画像を繰り返さない*/
+  float:left;                   /*リスト項目を横に並べる*/
+  display:inline;               /*リスト項目をインライン表示にする*/
+  list-style-type:none;         /*リストマーカー無しにする*/
+  background-repeat:no-repeat;  /*背景画像を繰り返さない*/
 }
 
-/*ボタン01～06にはそれぞれ異なる背景画像を指定する*/
 li#menu01 {
-	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
-	/* background-image:url("/static/images/bg_button1.png");*/	/*背景画像*/
-	background-size:200px 42px;
+	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
 li#menu02 {
-	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
-	background-size:200px 42px;
+	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
 li#menu03 {
-	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
-	background-size:200px 42px;
+	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
 li#menu04 {
-	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
-	background-size:200px 42px;
+	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
 li#menu05 {
-	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
-	background-size:200px 42px;
+	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
 li#menu06 {
-	width:200px; height:42px;	/*背景画像に合わせたサイズ指定*/
-	background-size:200px 42px;
+	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
 ul#menu a {
 	display:block;				/*リンクをブロック表示にする*/
@@ -201,31 +176,65 @@ ul#menu a {
 	color: #000000 !important;
 }
 
+
 /*============================================
-お問い合わせ
+ボディ
 ============================================*/
-div#inquiry {
-	width:1205px;	/*幅の指定と位置調整*/
-	height:540px;
-	float:left;				/*2カラム全体を左寄せにする*/
-	background-color:#fffaf0;
-	border-style: ridge;
-	padding:20px 0px 0px 270px;		/* 上右下左 位置調整 */
+/* コンテナが対象 */
+.body {
+  margin: 80px 0px 20px 0px;
+}
+
+.contact {
+  margin: auto;
+  max-width: 1000px;
+}
+
+.contact-result {
+  margin: auto;
+  padding-top: 150px;
+  max-width: 650px;
+}
+
+
+input#id_name.form-control {
+  margin: 10px 0px 10px 0px;
+  max-width: 400px;
+}
+
+input#id_email.form-control {
+  margin: 0px 0px 10px 0px;
+  max-width: 400px;
+}
+
+input#id_message.form-control {
+  margin: 0px 0px 10px 0px;
+  max-width: 800px;
 }
 
 div#sendButton {
-	padding:0px 550px 0px 0px;		/* 上右下左 位置調整 */
+  margin: 10px 0px 0px 0px;
+}
+
+button.btn.btn-primary {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+/* マウスカーソルを重ねたとき */
+button.btn.btn-primary:hover {
+  opacity: 0.7;
 }
 
 /*============================================
 フッター
 ============================================*/
-div#footer {
-	width:1205px;
-	height:80px;
-	float:left;
+footer.jumbotron {
 	background-color:#000;
 	color:#fff;
+	padding:5px 0px 10px 0px; /* 上右下左 */
+	margin-bottom: 0px;
+    border-radius: 0;         /* 角を四角化 */
 }
 
 /* SNS ボタンのグループ */
@@ -283,4 +292,3 @@ div#footer {
 .snsButtons_twitter  { background: #1da1f2; }
 .snsButtons_instagram { background: #cf2e92; }
 .snsButtons_line   { background: #00b900; }
-

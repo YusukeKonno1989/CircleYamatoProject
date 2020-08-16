@@ -1,6 +1,9 @@
 import os
-from dotenv import load_dotenv
 
+SSH_BASTION_ADDRESS = "13.115.127.128"
+SSH_PORT = 22
+SSH_USER = "ec2-user"
+SSH_PKEY_PATH = os.path.expanduser("~/.ssh/FirstKey.pem")
 MYSQL_HOST = os.environ.get("MYSQL_HOST")
 MYSQL_PORT = 3306
 MYSQL_USER = os.environ.get("MYSQL_USER")

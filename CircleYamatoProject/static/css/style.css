@@ -271,11 +271,11 @@ div#anchor_faq {
 }
 
 /*============================================
-お問い合わせ
+その他掲載ゾーン
 ============================================*/
-div#inquiry {
+div#etc {
 	width:1200px;	/*幅の指定と位置調整*/
-	height:200px;
+	height:700px;
 	float:left;				/*2カラム全体を左寄せにする*/
 	background-color:#fffaf0;
 	border-style: ridge;
@@ -287,23 +287,6 @@ p {
 div#anchor_inquiry {
 	margin-top:-185px;
  	padding-top:185px;
-}
-
-/*============================================
-動画
-============================================*/
-div#movie {
-	width:1200px;
-	height:600px;
-	float:left;				/* 中央寄せ */
-	background-color:#fffaf0;
-	border-style: ridge;
-}
-
-div#movie_area {
-	margin-top: 90px;
-	margin-left: 300px;
-
 }
 
 /*============================================

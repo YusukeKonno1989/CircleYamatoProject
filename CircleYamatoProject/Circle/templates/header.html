@@ -1,18 +1,49 @@
-<header id="header">
-	<div id="header">
-		<div id="header_image">
-			<img src="/static/images/circle_emblem.png" width="100" alt="サークルエンブレム" align="left">
-		</div>
-		<h1 style="text-align:left"><a href="/" class="text-decoration-none">よさこいチーム<br>大和まほろ座</a></h1>
-	</div>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<titleヘッダー</title>
+</head>
+<body>
 
-	<!-- メインメニュー -->
-	<ul id="menu">
-		<li id="menu01"><a href="#anchor_overview" class="btn btn01">概要</a></li>
-		<li id="menu02"><a href="#anchor_schedule" class="btn btn02">練習予定</a></li>
-		<li id="menu03"><a href="#anchor_join" class="btn btn03">参加方法</a></li>
-		<li id="menu04"><a href="#anchor_faq" class="btn btn04">FAQ</a></li>
-		<li id="menu05"><a href="{% url 'Circle:contact_form' %}" class="btn btn05">お問い合わせ</a></li>
-		<li id="menu06"><a href="{% url 'Circle:login' %}" class="btn btn06">会員専用</a></li>
-	</ul>
-</header>
+<!-- header-parts -->
+<div id="header-parts">
+  <header class="jumbotron sticky-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div id="header_logo">
+            <img class="float-right" src="/static/images/circle_emblem.png" width="100" alt="サークルエンブレム">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div id="header_logo">
+            <h1 style="text-align:left"><a href="/" class="text-decoration-none">よさこいチーム<br>大和まほろ座</a></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row menu">
+        <div class="mx-auto" style="width: 1300px;">
+          <!-- メインメニュー -->
+          <ul id="menu">
+            <li id="menu01"><a href="#anchor_overview" class="btn btn01">概要</a></li>
+            <li id="menu02"><a href="#anchor_schedule" class="btn btn02">練習予定</a></li>
+            <li id="menu03"><a href="#anchor_join" class="btn btn03">参加方法</a></li>
+            <li id="menu04"><a href="#anchor_faq" class="btn btn04">FAQ</a></li>
+            <li id="menu05"><a href="{% url 'Circle:contact_form' %}" class="btn btn05">お問い合わせ</a></li>
+            <li id="menu06"><a href="{% url 'Circle:login' %}" class="btn btn06">会員専用</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+<!-- /header-inner -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
