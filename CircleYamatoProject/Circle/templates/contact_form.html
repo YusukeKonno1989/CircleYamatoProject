@@ -3,43 +3,96 @@
 {% block content %}
 
   <!-- ヘッダー -->
-  <header class="jumbotron sticky-top">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6">
-          <div id="header_logo">
-            <img class="float-right" src="/static/images/circle_emblem.png" width="100" alt="サークルエンブレム">
+  <div class="d-none d-md-block sticky-top">
+    <!-- 上部固定 -->
+    <header class="jumbotron sticky-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-5">
+            <div id="header_logo">
+              <img class="float-right" src="/static/images/circle_emblem.png" width="100" alt="サークルエンブレム">
+            </div>
+          </div>
+          <div class="col-7">
+            <div id="header_logo">
+              <h1 style="text-align:left">
+                <a href="/" class="text-decoration-none">
+                  <font color="white">よさこいチーム<br>　ど　ろ　ろ　</font>
+                </a>
+              </h1>
+            </div>
           </div>
         </div>
-        <div class="col-6">
-          <div id="header_logo">
-            <h1 style="text-align:left"><a href="/" class="text-decoration-none">よさこいチーム<br>大和まほろ座</a></h1>
-          </div>
-        </div>
-      </div>
 
-      <div class="row menu">
-        <div class="mx-auto" style="width: 880px;">
-          <!-- メインメニュー -->
-          <ul id="menu">
-            <li id="menu01"><a href="/" class="btn btn01">概要</a></li>
-            <li id="menu02"><a href="/#anchor_schedule" class="btn btn02">練習予定</a></li>
-            <li id="menu03"><a href="/#anchor_join" class="btn btn03">参加方法</a></li>
-            <li id="menu04"><a href="/#anchor_faq" class="btn btn04">FAQ</a></li>
-            <li id="menu05"><a href="{% url 'Circle:contact_form' %}" class="btn btn05">お問い合わせ</a></li>
-            <li id="menu06"><a href="{% url 'Circle:login' %}" class="btn btn06">会員専用</a></li>
-          </ul>
+        <div class="row menu">
+          <div class="mx-auto" style="width: 880px;">
+            <!-- メインメニュー -->
+            <ul id="menu">
+              <li id="menu01"><a href="{% url 'Circle:index' %}" class="btn btn01">概要</a></li>
+              <li id="menu02"><a href="{% url 'Circle:index' %}#anchor_schedule" class="btn btn02">練習予定</a></li>
+              <li id="menu03"><a href="{% url 'Circle:index' %}#anchor_join" class="btn btn03">参加方法</a></li>
+              <li id="menu04"><a href="{% url 'Circle:index' %}#anchor_faq" class="btn btn04">FAQ</a></li>
+              <li id="menu05"><a href="{% url 'Circle:contact_form' %}" class="btn btn05">お問い合わせ</a></li>
+              <li id="menu06"><a href="{% url 'Circle:login' %}" class="btn btn06">会員専用</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
+
+  <!-- ヘッダー mdサイズ未満 -->
+  <div class="d-block d-md-none">
+    <!-- 上部固定無し -->
+    <header class="jumbotron" id="min_size">
+      <div class="container-fluid" id="min_container">
+        <div class="row">
+          <div class="col-4">
+            <div id="header_logo">
+              <img class="float-right" src="/static/images/circle_emblem.png" width="80" alt="サークルエンブレム">
+            </div>
+          </div>
+          <div class="col-8">
+            <div id="header_logo">
+              <h3 style="text-align:left">
+                <a href="/" class="text-decoration-none">
+                  <font color="white">よさこいチーム<br>　ど　ろ　ろ　</font>
+                </a>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row menu">
+          <div class="mx-auto" style="width: 880px;">
+            <!-- メインメニュー -->
+            <div id="nav-drawer">
+              <input id="nav-input" type="checkbox" class="nav-unshown">
+              <label id="nav-open" for="nav-input"><span></span></label>
+              <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+              <div id="nav-content">
+                <ul id="nav_menu">
+                  <li id="nav_menu01"><a href="{% url 'Circle:index' %}" class="btn nav_btn01">概要</a></li>
+                  <li id="nav_menu02"><a href="#anchor_schedule" class="btn nav_btn02">練習予定</a></li>
+                  <li id="nav_menu03"><a href="#anchor_join" class="btn nav_btn03">参加方法</a></li>
+                  <li id="nav_menu04"><a href="#anchor_faq" class="btn nav_btn04">FAQ</a></li>
+                  <li id="nav_menu05"><a href="{% url 'Circle:contact_form' %}" class="btn nav_btn05">お問い合わせ</a></li>
+                  <li id="nav_menu06"><a href="{% url 'Circle:login' %}" class="btn nav_btn06">会員専用</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
 
   <!-- ボディ -->
   <div class="container-fluid body">
 
     <div id="inquiry">
       <div class="row contact">
-        <div class="col-10">
+        <div class="col-12">
           <h2><span style="border-bottom: solid 2px black;">お問い合わせ</span></h2>
           <br>
 
@@ -57,20 +110,41 @@
   </div>
 
   <!-- フッター -->
-  <footer class="jumbotron fixed-bottom">
-    <div class="container">
-      <ul class="snsButtons">
-        <li class="snsButtons_twitter"><i class="fab fa-twitter"></i>
-          <span class="snsButtons_label">
-            <a href="https://twitter.com/yamato_mahoroza" target="_blank">twitter</a>
-          </span>
-        <li class="snsButtons_instagram"><i class="fab fa-instagram"></i><span class="snsButtons_label">instagram</span>
-        <li class="snsButtons_line"><i class="fab fa-line"></i><span class="snsButtons_label">Line</span>
-      </ul>
-      <center>
-        <p><small>&copy; copyright 2020</small></p>
-      </center>
-    </div>
-  </footer>
+  <div class="d-none d-md-block sticky-top">
+    <footer class="jumbotron fixed-bottom">
+      <div class="container">
+        <ul class="snsButtons">
+          <li class="snsButtons_twitter"><i class="fab fa-twitter"></i>
+            <span class="snsButtons_label">
+              <a href="https://twitter.com/yamato_mahoroza" target="_blank">twitter</a>
+            </span>
+          <li class="snsButtons_instagram"><i class="fab fa-instagram"></i><span class="snsButtons_label">instagram</span>
+          <li class="snsButtons_line"><i class="fab fa-line"></i><span class="snsButtons_label">Line</span>
+        </ul>
+        <center>
+          <p><small>&copy; copyright 2020</small></p>
+        </center>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ヘッダー mdサイズ未満 -->
+  <div class="d-block d-md-none">
+      <footer class="jumbotron">
+      <div class="container_min">
+        <ul class="snsButtons_min">
+          <li class="snsButtons_twitter"><i class="fab fa-twitter"></i>
+            <span class="snsButtons_label_min">
+              <a href="https://twitter.com/yamato_mahoroza" target="_blank">twitter</a>
+            </span>
+          <li class="snsButtons_instagram"><i class="fab fa-instagram"></i><span class="snsButtons_label_min">instagram</span>
+          <li class="snsButtons_line"><i class="fab fa-line"></i><span class="snsButtons_label_min">Line</span>
+        </ul>
+        <center>
+          <p><small>&copy; copyright 2020</small></p>
+        </center>
+      </div>
+    </footer>
+  </div>
 
 {% endblock %}

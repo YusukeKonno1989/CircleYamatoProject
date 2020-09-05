@@ -22,18 +22,34 @@ header.jumbotron {
   border-radius: 0;          /* 角を四角化 */
 }
 
+header#min_size.jumbotron {
+  max-height: 130px;
+  padding:20px 15px 20px 0px; /* 上右下左 */
+}
+
+div#min_container.container-fluid {
+  padding: 0px;
+}
+
 div#header_logo {
   padding:0px 0px 0px 0px; /* 上右下左 */
 }
 
 h1 {
-	padding:0px 0px 0px 0px;		/* 上右下左 位置調整 */
-	font-family:"HGP行書体", Helvetica, cursive;	/* フォントの種類 */
-	color: #fff !important;
+  padding:0px 0px 0px 0px;		/* 上右下左 位置調整 */
+  font-family:"HGP行書体", Helvetica, serif;	/* フォントの種類 */
+  color: #fff !important;
 }
-h1 a {
-	text-decoration:none;	/*リンクの下線を無くす*/
-	color: #000 !important;
+
+h3 {
+  padding:8px 0px 0px 0px;		/* 上右下左 位置調整 */
+  font-family:"HGP行書体", Helvetica, cursive;	/* フォントの種類 */
+  color: #fff !important;
+}
+
+a {
+  text-decoration:none;	/*リンクの下線を無くす*/
+  color: #000 !important;
 }
 
 .menu{
@@ -42,17 +58,32 @@ h1 a {
   max-height: 42px;
 }
 
- .col-6{
+ .col-5{
   padding: 0px;
 }
+
+ .col-7{
+  padding: 0px;
+}
+
+/* ----スマホサイズ用 ----*/
+ .col-4{
+  padding: 0px;
+}
+
+ .col-8{
+  padding: 0px;
+}
+/*---------------------- */
 
 p {
   margin:0px 0px 0px 0px;
 }
 
+/* ------------------ヘッダ固定時のメニューボタン ------------------*/
 ul#menu {
-	height:42px;
-	font-weight:bold;
+  height:42px;
+  font-weight:bold;
 }
 li#menu01,li#menu02,li#menu03,li#menu04,li#menu05,li#menu06 {
   float:left;                   /*リスト項目を横に並べる*/
@@ -61,24 +92,36 @@ li#menu01,li#menu02,li#menu03,li#menu04,li#menu05,li#menu06 {
   background-repeat:no-repeat;  /*背景画像を繰り返さない*/
 }
 
+/* 概要 */
 li#menu01 {
-	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	width:110px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
+
+/* 練習予定 */
 li#menu02 {
-	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	width:110px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
+
+/* 参加方法 */
 li#menu03 {
-	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	width:110px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
+
+/* FAQ */
 li#menu04 {
-	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	width:110px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
+
+/* お問い合わせ */
 li#menu05 {
 	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
+
+/* 会員専用 */
 li#menu06 {
-	width:130px; height:42px;	/*背景画像に合わせたサイズ指定*/
+	width:110px; height:42px;	/*背景画像に合わせたサイズ指定*/
 }
+
 ul#menu a {
 	display:block;				/*リンクをブロック表示にする*/
 	height:42px; padding-top:9px; text-align:center;
@@ -175,14 +218,243 @@ ul#menu a {
 	background-color: #f0f8ff;
 	color: #000000 !important;
 }
+/* ---------------------------------------------------------------------- */
 
+/* ------------------ヘッダ固定無時のメニューボタン ------------------*/
+ul#nav_menu {
+	height:42px;
+	font-weight:bold;
+	padding:0px;
+}
+li#nav_menu01,li#nav_menu02,li#nav_menu03,li#nav_menu04,li#nav_menu05,li#nav_menu06 {
+  list-style-type:none;         /*リストマーカー無しにする*/
+  background-repeat:no-repeat;  /*背景画像を繰り返さない*/
+}
 
+/* 概要 */
+li#nav_menu01 {
+  height:42px;	/*背景画像に合わせたサイズ指定*/
+}
+
+/* 練習予定 */
+li#nav_menu02 {
+  height:42px;	/*背景画像に合わせたサイズ指定*/
+}
+
+/* 参加方法 */
+li#nav_menu03 {
+  height:42px;	/*背景画像に合わせたサイズ指定*/
+}
+
+/* FAQ */
+li#nav_menu04 {
+  height:42px;	/*背景画像に合わせたサイズ指定*/
+}
+
+/* お問い合わせ */
+li#nav_menu05 {
+  height:42px;	/*背景画像に合わせたサイズ指定*/
+}
+
+/* 会員専用 */
+li#nav_menu06 {
+  height:42px;	/*背景画像に合わせたサイズ指定*/
+}
+
+ul#nav_menu a {
+  display:block;				/*リンクをブロック表示にする*/
+  height:42px; padding-top:9px; text-align:center;
+  text-decoration:none; 			/*リンクの下線を無くす*/
+  font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+}
+
+.nav_btn01 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 0;          /* 角を四角化 */
+}
+
+.nav_btn02 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 0;          /* 角を四角化 */
+}
+
+.nav_btn03 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 0;          /* 角を四角化 */
+}
+
+.nav_btn04 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 0;          /* 角を四角化 */
+}
+
+.nav_btn05 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 0;          /* 角を四角化 */
+}
+
+.nav_btn06 {
+	background-color: #000000;
+    color: #fff !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-radius: 0;          /* 角を四角化 */
+}
+
+.nav_btn01:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.nav_btn02:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.nav_btn03:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.nav_btn04:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.nav_btn05:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+
+.nav_btn06:hover {
+	background-color: #f0f8ff;
+	color: #000000 !important;
+}
+/* ---------------------------------------------------------------------- */
+
+#nav-drawer {
+  position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+  margin: 10px 0px 10px 30px;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 70%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 330px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #transparent;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+/* 画面サイズに応じて表示・非表示を分ける */
+@media screen and (min-width:768px) {
+  #nav-open {
+    display:none;
+  }
+}
 /*============================================
 ボディ
 ============================================*/
 /* コンテナが対象 */
 .body {
-  margin: 80px 0px 20px 0px;
+  margin: 80px 0px 30px 0px;
 }
 
 .contact {
@@ -207,7 +479,7 @@ input#id_email.form-control {
   max-width: 400px;
 }
 
-input#id_message.form-control {
+textarea#id_message.form-control {
   margin: 0px 0px 10px 0px;
   max-width: 800px;
 }
@@ -287,6 +559,61 @@ footer.jumbotron {
   text-align: center;
   font-size: 12pt;
 }
+
+/* ----スマホサイズ用---- */
+
+/* SNS ボタンのグループ */
+.snsButtons_min {
+  margin: 5px;
+  padding: 0px;
+  text-align: center;
+}
+.snsButtons_min a {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+/* 各 SNS ボタンのボックス */
+.snsButtons_min li {
+  display: inline-block;  /* 水平に並べる */
+  list-style-type: none;  /* 先頭のポッチを消す */
+  margin: 2px;
+  padding: 6px 0px;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+/* マウスカーソルを重ねたとき */
+.snsButtons_min li:hover {
+  opacity: 0.7;
+}
+
+/* クリックしたとき */
+.snsButtons_min li:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+/* アイコン部分 */
+.snsButtons_min i {
+  font-size: 15pt;
+  min-width: 30px;
+  margin: 0px;
+  padding: 0px 0px 0px 8px;
+  vertical-align: bottom;
+}
+
+/* テキスト部分 */
+.snsButtons_label_min {
+  min-width: 50px;
+  display: inline-block;
+  padding: 0px 8px 0px 0px;
+  text-align: center;
+  font-size: 9pt;
+}
+
+/* ---------------------------- */
 
 /* 各 SNS のブランドカラー */
 .snsButtons_twitter  { background: #1da1f2; }
