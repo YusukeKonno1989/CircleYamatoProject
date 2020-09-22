@@ -466,8 +466,8 @@ ul#nav_menu a {
   margin: auto;
   padding-top: 150px;
   max-width: 650px;
+  min-height: 570px;
 }
-
 
 input#id_name.form-control {
   margin: 10px 0px 10px 0px;
@@ -482,10 +482,15 @@ input#id_email.form-control {
 textarea#id_message.form-control {
   margin: 0px 0px 10px 0px;
   max-width: 800px;
+  resize: none;
 }
 
-div#sendButton {
-  margin: 10px 0px 0px 0px;
+label[for="id_gender_0"] {
+    margin: 0px 10px 10px 0px;
+}
+
+label[for="id_experience_0"] {
+    margin: 0px 10px 10px 0px;
 }
 
 button.btn.btn-primary {

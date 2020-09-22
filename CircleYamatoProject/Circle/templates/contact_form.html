@@ -73,9 +73,9 @@
               <div id="nav-content">
                 <ul id="nav_menu">
                   <li id="nav_menu01"><a href="{% url 'Circle:index' %}" class="btn nav_btn01">概要</a></li>
-                  <li id="nav_menu02"><a href="#anchor_schedule" class="btn nav_btn02">練習予定</a></li>
-                  <li id="nav_menu03"><a href="#anchor_join" class="btn nav_btn03">参加方法</a></li>
-                  <li id="nav_menu04"><a href="#anchor_faq" class="btn nav_btn04">FAQ</a></li>
+                  <li id="nav_menu02"><a href="{% url 'Circle:index' %}#anchor_schedule_min" class="btn nav_btn02">練習予定</a></li>
+                  <li id="nav_menu03"><a href="{% url 'Circle:index' %}#anchor_join_min" class="btn nav_btn03">参加方法</a></li>
+                  <li id="nav_menu04"><a href="{% url 'Circle:index' %}#anchor_faq_min" class="btn nav_btn04">FAQ</a></li>
                   <li id="nav_menu05"><a href="{% url 'Circle:contact_form' %}" class="btn nav_btn05">お問い合わせ</a></li>
                   <li id="nav_menu06"><a href="{% url 'Circle:login' %}" class="btn nav_btn06">会員専用</a></li>
                 </ul>
@@ -96,9 +96,20 @@
           <h2><span style="border-bottom: solid 2px black;">お問い合わせ</span></h2>
           <br>
 
-          <p>よさこいチーム　大和まほろ座に関する質問等がありましたら、ご連絡ください！</p>
+          <p>よさこいチーム　どろろに関する質問等がありましたら、ご連絡ください！</p>
           <form method="POST">{% csrf_token %}
-            {{ form.as_p }}
+            {{ form.name }}
+            {{ form.email }}
+            性別：
+            {% for radiobutton in form.gender %}
+                {{ radiobutton }}
+            {% endfor %}
+            <br>
+            演武経験：
+            {% for radiobutton in form.experience %}
+                {{ radiobutton }}
+            {% endfor %}
+            {{ form.message }}
             <div id="sendButton">
               <button type="submit" class="btn btn-primary">送信</button>
             </div>
@@ -116,10 +127,16 @@
         <ul class="snsButtons">
           <li class="snsButtons_twitter"><i class="fab fa-twitter"></i>
             <span class="snsButtons_label">
-              <a href="https://twitter.com/yamato_mahoroza" target="_blank">twitter</a>
+              <a href="https://twitter.com/dororo_n" target="_blank">twitter</a>
             </span>
-          <li class="snsButtons_instagram"><i class="fab fa-instagram"></i><span class="snsButtons_label">instagram</span>
-          <li class="snsButtons_line"><i class="fab fa-line"></i><span class="snsButtons_label">Line</span>
+          <li class="snsButtons_instagram"><i class="fab fa-instagram"></i>
+            <span class="snsButtons_label">
+              <a href="https://www.instagram.com/dororo_yosakoi/" target="_blank">instagram</a>
+            </span>
+          <li class="snsButtons_line"><i class="fab fa-line"></i>
+            <span class="snsButtons_label">
+              <a href="https://lin.ee/ckZrsBC" target="_blank">Line</a>
+            </span>
         </ul>
         <center>
           <p><small>&copy; copyright 2020</small></p>
@@ -135,10 +152,16 @@
         <ul class="snsButtons_min">
           <li class="snsButtons_twitter"><i class="fab fa-twitter"></i>
             <span class="snsButtons_label_min">
-              <a href="https://twitter.com/yamato_mahoroza" target="_blank">twitter</a>
+              <a href="https://twitter.com/dororo_n" target="_blank">twitter</a>
             </span>
-          <li class="snsButtons_instagram"><i class="fab fa-instagram"></i><span class="snsButtons_label_min">instagram</span>
-          <li class="snsButtons_line"><i class="fab fa-line"></i><span class="snsButtons_label_min">Line</span>
+          <li class="snsButtons_instagram"><i class="fab fa-instagram"></i>
+            <span class="snsButtons_label_min">
+              <a href="https://www.instagram.com/dororo_yosakoi/" target="_blank">instagram</a>
+            </span>
+          <li class="snsButtons_line"><i class="fab fa-line"></i>
+            <span class="snsButtons_label_min">
+              <a href="https://lin.ee/ckZrsBC" target="_blank">Line</a>
+            </span>
         </ul>
         <center>
           <p><small>&copy; copyright 2020</small></p>

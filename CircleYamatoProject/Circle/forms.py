@@ -3,7 +3,18 @@ from .models import Schedule
 from django.core.mail import BadHeaderError, send_mail
 from django.conf import settings
 from django.http import HttpResponse
+from django.contrib.admin import widgets
 from unittest.util import _MAX_LENGTH
+
+GENDER_CHOICE = {
+    ('0','男性'),
+    ('1','女性'),
+}
+
+EXPERIENCE_CHOICE = {
+    ('0','未経験'),
+    ('1','演武経験有'),
+}
 
 class ScheduleForm(forms.ModelForm):
     """
@@ -56,6 +67,20 @@ class ContactForm(forms.Form):
         }),
     )
 
+    gender = forms.ChoiceField(
+        label = "性別",
+        widget=forms.RadioSelect,
+        choices = GENDER_CHOICE,
+        required = True
+    )
+
+    experience = forms.ChoiceField(
+        label = "演武経験",
+        widget=forms.RadioSelect,
+        choices = EXPERIENCE_CHOICE,
+        required = True
+    )
+
     message = forms.CharField(
         label='',
         widget=forms.Textarea(attrs={
@@ -68,8 +93,17 @@ class ContactForm(forms.Form):
         subject = "お問い合わせ"
         name = self.cleaned_data['name']
         email = self.cleaned_data['email']
+        gender = self.cleaned_data['gender']
+        for data in GENDER_CHOICE:
+            if data[0] == gender:
+                gender_name = data[1]
+        experience = self.cleaned_data['experience']
+        for data in EXPERIENCE_CHOICE:
+            if data[0] == experience:
+                experience_name = data[1]
         from_email = '{name} <{email}>'.format(name=name, email=email)
-        message = "送信者：" + email + "\n\n" + self.cleaned_data['message']
+        message = "送信者：" + name + "  " + email + "\n\n" + "性別："  + gender_name + "\n" + "演武経験：" + \
+                  experience_name +"\n\n" + self.cleaned_data['message']
         recipient_list = [settings.EMAIL_HOST_USER]
 
         try:
