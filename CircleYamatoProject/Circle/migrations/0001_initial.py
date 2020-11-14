@@ -45,4 +45,21 @@ class Migration(migrations.Migration):
                 'db_table': 'SCHEDULE',
             },
         ),
+        migrations.CreateModel(
+            name='Forum',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('posted_date', models.DateTimeField(verbose_name='posted_date')),
+                ('name', models.TextField(verbose_name='name')),
+                ('contents', models.TextField(verbose_name='contents')),
+                ('good_count', models.IntegerField(verbose_name='good_count')),
+                ('update_date', models.DateTimeField(verbose_name='update_date')),
+                ('commit_date', models.DateTimeField(verbose_name='commit_date')),
+            ],
+            options={
+                'verbose_name': '掲示板',
+                'verbose_name_plural': '掲示板',
+                'db_table': 'FORUM',
+            },
+        ),
     ]

@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'CircleYamatoProject.wsgi.application'
 
 #LOGIN_REDIRECT_URL = '/Circle/schedule/month/'
 #LOGIN_REDIRECT_URL = '/Circle/schedule/week/'
-#LOGIN_REDIRECT_URL = '/Circle/schedule/week_with_schedule/'
-LOGIN_REDIRECT_URL = '/Circle/schedule/myschedule/'
+LOGIN_REDIRECT_URL = '/Circle/forum/'
+#LOGIN_REDIRECT_URL = '/Circle/schedule/myschedule/'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

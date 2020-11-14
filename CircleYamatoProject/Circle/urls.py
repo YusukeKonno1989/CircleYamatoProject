@@ -26,4 +26,6 @@ urlpatterns = [
     path('Circle/schedule/myschedule/<int:year>/<int:month>/<int:day>/', views.MySchedule.as_view(), name="myschedule"),
     path('Circle/contact/', views.ContactFormView.as_view(), name="contact_form"),
     path('Circle/contact/result/', views.ContactResultView.as_view(), name="contact_result"),
+    path('Circle/forum/', views.ForumFormView.as_view(), name="forum"),
+    path('Circle/forum/<int:id>/', views.ForumFormLikeView.as_view(), name="like"),
 ]

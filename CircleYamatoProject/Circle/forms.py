@@ -1,5 +1,5 @@
 from django import forms
-from .models import Schedule
+from .models import Schedule, Forum
 from django.core.mail import BadHeaderError, send_mail
 from django.conf import settings
 from django.http import HttpResponse
@@ -110,3 +110,14 @@ class ContactForm(forms.Form):
             send_mail(subject, message, from_email, recipient_list)
         except BadHeaderError:
             return HttpResponse("メール送信時にエラーが発生しました。")
+
+class ForumForm(forms.ModelForm):
+
+    class Meta:
+        model = Forum
+        fields = ('contents',)
+        widgets = {
+            'contents': forms.Textarea(attrs={
+                'class': 'form-control',
+            }),
+        }

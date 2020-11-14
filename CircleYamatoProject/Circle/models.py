@@ -33,3 +33,16 @@ class Schedule(models.Model):
         db_table = "SCHEDULE"
         verbose_name = verbose_name_plural = "スケジュール"
 
+class Forum(models.Model):
+
+    """掲示板テーブル"""
+    posted_date = models.DateTimeField("投稿日付")
+    name = models.TextField("名前")
+    contents =models.TextField("内容")
+    good_count =models.IntegerField("いいねカウント")
+    update_date = models.DateTimeField("更新日付")
+    commit_date = models.DateTimeField("作成日")
+
+    class Meta:
+        db_table = "FORUM"
+        verbose_name = verbose_name_plural = "掲示板"

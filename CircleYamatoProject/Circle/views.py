@@ -2,12 +2,13 @@ import mysql.connector
 import os
 import traceback
 import datetime
+import pytz
 import const
 from sshtunnel import SSHTunnelForwarder
-from Circle.models import Members
-from Circle.models import Schedule
+from Circle.models import Members, Schedule, Forum
 from django.template.response import TemplateResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
@@ -16,8 +17,10 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from . import mixinCalendar
 from _datetime import date
-from .forms import ScheduleForm
-from .forms import ContactForm
+from .forms import ScheduleForm, ContactForm, ForumForm
+from django.utils import timezone
+from django.views.generic.list import ListView
+from pure_pagination.mixins import PaginationMixin
 
 def index(request):
 
@@ -97,7 +100,7 @@ class WeekWithScheduleCalendar(mixinCalendar.WeekWithScheduleMixin, generic.Temp
         context.update(calendar_context)
         return context
 
-class MySchedule(mixinCalendar.MonthCalendarMixin, mixinCalendar.WeekWithScheduleMixin, generic.CreateView):
+class MySchedule(LoginRequiredMixin, mixinCalendar.MonthCalendarMixin, mixinCalendar.WeekWithScheduleMixin, generic.CreateView):
     """
     月間カレンダー、週間カレンダー、スケジュール登録画面をまとめたビュー
     """
@@ -128,4 +131,85 @@ class MySchedule(mixinCalendar.MonthCalendarMixin, mixinCalendar.WeekWithSchedul
         schedule.commit_date = datetime.date.today()
         schedule.update_date = datetime.date.today()
         schedule.save()
+
         return redirect('Circle:myschedule', year=date.year, month=date.month, day=date.day)
+
+class ForumFormView(LoginRequiredMixin, PaginationMixin, generic.CreateView, ListView):
+    """
+    掲示板用ビュー
+    """
+
+    template_name = os.path.join(os.path.dirname(__file__), 'templates/forum.html')
+    model = Forum
+    form_class = ForumForm
+    paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def get_queryset(self):
+        return Forum.objects.all().order_by("posted_date").reverse()
+
+    def form_valid(self, form):
+
+        contents = form.data["contents"]
+
+        forum = form.save(commit=False)
+
+        """データ設定"""
+        forum.name = self.request.user
+        forum.contents = contents
+        forum.good_count = 0
+        forum.posted_date = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+        forum.update_date = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+        forum.commit_date = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+        forum.save()
+
+        return redirect('Circle:forum')
+
+    def form_invalid(self, form):
+        test = ""
+
+class ForumFormLikeView(LoginRequiredMixin, PaginationMixin, generic.CreateView, ListView):
+    """
+    掲示板用ビュー(いいね押下時)
+    """
+
+    template_name = os.path.join(os.path.dirname(__file__), 'templates/forum.html')
+    model = Forum
+    form_class = ForumForm
+    paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        save_id = self.kwargs.get('id', 0)
+        forum = Forum.objects.get(id=save_id)
+
+        """データ設定"""
+        forum.good_count = forum.good_count + 1
+        forum.update_date = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+        forum.save()
+
+        return context
+
+    def get_queryset(self):
+        return Forum.objects.all().order_by("posted_date").reverse()
+
+    def form_valid(self, form):
+
+        paginate_by = 3
+        contents = form.data["contents"]
+
+        forum = form.save(commit=False)
+
+        """データ設定"""
+        forum.name = self.request.user
+        forum.contents = contents
+        forum.good_count = 0
+        forum.posted_date = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+        forum.update_date = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+        forum.commit_date = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+        forum.save()
+
+        return redirect('Circle:forum')
