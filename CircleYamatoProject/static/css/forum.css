@@ -1,0 +1,49 @@
+/*============================================
+全般的なスタイル
+============================================*/
+body {
+  background-color:#fffaf0;
+}
+
+textarea {
+  resize:none;
+}
+
+/*============================================
+ヘッダ
+============================================*/
+
+
+/*============================================
+ボディ
+============================================*/
+/* コンテナが対象 */
+.body {
+  margin: 40px 40px 30px 40px;
+}
+
+input#id_name.form-control {
+  margin: 10px 0px 10px 0px;
+  max-width: 300px;
+}
+
+input#id_writing.form-control {
+  margin: 10px 0px 10px 0px;
+  max-width: 500px;
+  min-height: 500px;
+}
+
+button.btn.btn-primary {
+  background-color: #000000;
+  border-color: #000000;
+  margin: 10px 0px 10px 0px;
+}
+
+div.row.disp_writing{
+  margin:0px 20px 0px 20px; /* 上右下左 */
+}
+
+/*============================================
+フッター
+============================================*/
+

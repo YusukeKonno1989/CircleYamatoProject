@@ -1,0 +1,63 @@
+{% extends "baseForum.html" %}
+
+{% block content %}
+
+  <!-- ボディ -->
+  <div class="container body">
+
+    <div id="writing">
+      <div class="row writing">
+        <div class="col-12">
+          <a href="/" class="text-decoration-none">HPに戻る</a>
+        </div>
+        <div class="col-12">
+          <h2><span style="border-bottom: solid 2px black;">経費申請掲示板</span></h2>
+          <br>
+
+          <form action="" method="POST">
+            {{ form.non_field_errors }}
+            {{ form.contents }}
+
+            <div id="writeButton">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">書き込み</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <hr color="#000000" width="95%" size="5">
+
+  <div id="disp_writing">
+    <div class="row disp_writing">
+      <div class="col-12">
+        {% for post in object_list %}
+          {{ post.id }}
+          {{ post.name }}
+          <br>
+          {{ post.posted_date }}
+          <br>
+          {{ post.contents }}
+          <br>
+          <div id="goodButton">
+            <a href="{% url 'Circle:like' post.id %}">
+              <button type="submit" name="good" class="btn btn-primary">いいね</button>
+            </a>
+            {{ post.good_count }}
+          </div>
+          <hr>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="row pagenation">
+    <div class="col-12">
+      {% include 'includes/pagination.html' %}
+    </div>
+  </div>
+
+{% endblock %}
